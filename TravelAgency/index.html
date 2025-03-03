@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Registration Modal Styles -->
+    <style>
+        /* Registration Modal Styles */
+        #bookingModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        #bookingModalContent {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        #bookingModalContent h2 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        #bookingModalContent form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        #bookingModalContent form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        #closeBookingModal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #closeBookingModal:hover,
+        #closeBookingModal:focus {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">Travel<span>Explorer</span></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <a href="#" class="btn">Book Now</a>
+                <div class="menu-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        // Responsive Navbar
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Explore The World</h1>
+            <p>Discover amazing places with our exclusive travel packages</p>
+            <a href="#" class="btn">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Destinations Section -->
+    <section class="destinations">
+        <h2>Featured Destinations</h2>
+        <div class="destination-grid">
+            <div class="destination-card">
+                <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\Paris.jpeg" alt="Paris">
+                <div class="overlay">
+                    <h3>Paris, France</h3>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="C:\Dlithe Intern\images\Bali.jpeg" alt="Bali">
+                <div class="overlay">
+                    <h3>Bali, Indonesia</h3>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\download.jpeg" alt="New York">
+                <div class="overlay">
+                    <h3>New York, USA</h3>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\Switzerland.jpeg" alt="Switzerland">
+                <div class="overlay">
+                    <h3>Switzerland</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="travel-packages" class="packages">
+        <div class="container">
+            <h2 class="section-title">Best Travel Packages</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\Paris.jpeg" alt="Paris">
+                    <h3>Paris Getaway</h3>
+                    <p>5 Days / 4 Nights - Explore the City of Love</p>
+                    <span class="price">$999</span>
+                    <a href="#" class="btn package-book">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <img src="C:\Dlithe Intern\images\Bali.jpeg" alt="Bali">
+                    <h3>Bali Adventure</h3>
+                    <p>7 Days / 6 Nights - A tropical paradise experience</p>
+                    <span class="price">$899</span>
+                    <a href="#" class="btn package-book">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\Switzerland.jpeg" alt="Switzerland">
+                    <h3>Swiss Alps Escape</h3>
+                    <p>6 Days / 5 Nights - Stunning mountain views</p>
+                    <span class="price">$1299</span>
+                    <a href="#" class="btn package-book">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="review">"Amazing experience! The trip was well-organized and stress-free. Highly recommend this agency!"</p>
+                    <div class="customer">
+                        <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\emily.jpeg" alt="Customer 1">
+                        <h3>Emily Johnson</h3>
+                        <span>New York, USA</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="review">"Loved every moment of our trip. The team was super helpful, and the destinations were stunning!"</p>
+                    <div class="customer">
+                        <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\rajesh.jpeg" alt="Customer 2">
+                        <h3>Rajesh Kumar</h3>
+                        <span>Bangalore, India</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="review">"The best travel experience ever! Everything was well planned, and the customer service was top-notch!"</p>
+                    <div class="customer">
+                        <img src="C:\Users\nagav\OneDrive\Desktop\Dlithe\TravelAgency\images\sophia.jpeg" alt="Customer 3">
+                        <h3>Sophia Martinez</h3>
+                        <span>Madrid, Spain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa fa-globe"></i>
+                    <h3>Worldwide Destinations</h3>
+                    <p>Explore the best travel destinations across the globe with our expertly curated packages.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa fa-money"></i>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Get the most competitive prices with no hidden charges or extra fees.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa fa-star"></i>
+                    <h3>Top-Notch Services</h3>
+                    <p>We ensure a seamless travel experience with 24/7 customer support.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa fa-plane"></i>
+                    <h3>Hassle-Free Bookings</h3>
+                    <p>Book your trip in just a few clicks with our easy-to-use platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Visit Our News Channel</h2>
+            <p>Get the latest travel deals, tips, and updates straight to your inbox.</p>
+            <form class="newsletter-form" action="file:///C:/Users/nagav/OneDrive/Desktop/Dlithe/NewsChannel/news.html" method="POST" target="_blank">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">click here</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>TravelX</h2>
+                    <p>Explore the world with the best travel experiences.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">Packages</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa fa-envelope"></i> @travelx.com</p>
+                    <p><i class="fa fa-phone"></i> +91 9019736365</p>
+                    <p><i class="fa fa-map-marker"></i>Banglore , Karnataka</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Booking Registration Modal -->
+    <div id="bookingModal">
+        <div id="bookingModalContent">
+            <span id="closeBookingModal">&times;</span>
+            <h2>Register Your Booking</h2>
+            <form id="bookingForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+                
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript to trigger registration modal on "Book Now" button click -->
+    <script>
+        // Attach event listeners to all Book Now buttons in the Best Travel Packages section
+        var packageBookButtons = document.querySelectorAll('.package-book');
+        packageBookButtons.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Open the registration modal
+                document.getElementById('bookingModal').style.display = 'block';
+            });
+        });
+
+        // Close registration modal when clicking the close icon
+        document.getElementById('closeBookingModal').onclick = function() {
+            document.getElementById('bookingModal').style.display = 'none';
+        };
+
+        // Close modal if clicking outside the modal content
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('bookingModal')) {
+                document.getElementById('bookingModal').style.display = 'none';
+            }
+        });
+
+        // Handle the booking form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var destination = document.getElementById('destination').value;
+            alert("Booking Registered:\nName: " + name + "\nPhone: " + phone + "\nEmail: " + email + "\nDestination: " + destination);
+            // Optionally, send the data to a server here
+            document.getElementById('bookingModal').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

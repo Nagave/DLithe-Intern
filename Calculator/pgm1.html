@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(2, 100px);
+            gap: 10px;
+        }
+        input[type="number"] {
+            grid-column: span 2;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            grid-column: span 2;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #2e2a2a;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="number1" placeholder="Enter first number">
+        <input type="number" id="number2" placeholder="Enter second number">
+        <button onclick="performOperation('add')">Addition</button>
+        <button onclick="performOperation('subtract')">Subtraction</button>
+        <button onclick="performOperation('multiply')">Multiplication</button>
+        <button onclick="performOperation('divide')">Division</button>
+        <button onclick="clearFields()">C</button>
+        <div id="result"> <placeholder="Result"></placeholder> </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

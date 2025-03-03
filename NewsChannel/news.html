@@ -1,141 +1,226 @@
 <!DOCTYPE html>
-<html>
-<title>MY RESUME</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
-<body class="w3-light-grey">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Channel</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-image: url("images/news-bg.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 20px 0;
+    }
+    nav {
+      background-image: url('images/nav-background.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 10px;
+      width: 100%;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-top: 20px;
+    }
+    .featured {
+      width: 65%;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .ad-section {
+      width: 30%;
+      padding: 20px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      text-align: center;
+    }
+    /* Modal styles for Travel Agency Advertisement */
+    #adModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    #adModalContent {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    #adModalContent img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    #adModalContent h2 {
+      margin-top: 15px;
+    }
+    #closeModal {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #closeModal:hover,
+    #closeModal:focus {
+      color: black;
+    }
+    /* Hidden content message style */
+    #ageRestricted {
+      display: none;
+      margin-top: 50px;
+      background: rgba(255,255,255,0.9);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Breaking News 24/7</h1>
+    <nav>
+      <ul>
+        <li><a href="https://www.aljazeera.com">Home</a></li>
+        <li><a href="world.html">World</a></li>
+        <li><a href="politics.html">Politics</a></li>
+        <li><a href="business.html">Business</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="entertainment.html">Entertainment</a></li>
+        <li><a href="technology.html">Technology</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <marquee behavior="scroll" direction="left"><a href="breaking-news.html">Breaking News: Major event unfolding worldwide. Stay tuned for live updates!</a></marquee>
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="C:\Dlithe Intern\images\girlpic.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Nagaveni H </h2>
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>BE Student</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Chitradurga,Karnataka </p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>nagavenihemagirimath@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>9019736365</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Database: MySQL</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
-          </div>
-          <p>Frontend: HTML, CSS </p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>Programming: Java, Python</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>Backend: Django</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>Kannada</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-          </div>
-          <p>Hindi</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
-          <br>
-        </div>
-      </div><br>
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Java - FSD Intern </b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Feb 2025  - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Java Intern</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Nov 2024 - Dec 2024</h6>
-          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Cyber Security </b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2023 - jun 2023</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
-        </div>
+  <!-- Main content -->
+  <div class="content-wrapper" id="mainContent">
+    <section class="featured">
+      <h2>Top Headlines</h2>
+      <div class="card">
+        <h3><a href="#">Breaking: Major Event Unfolds</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more...</a></p>
       </div>
-
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>GMIT</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Pursuing</h6>
-          <p>BE Final Year Computer science student<br> 
-             CGPA : 9.1</br></p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>St.Annes PU Science an PU College</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - 2021</h6>
-          <p>Percentage: 81%</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>St.Annes Primary And High School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2019</h6>
-          <p>Percentage : 90%</p><br>
-        </div>
+      <div class="card">
+        <h3><a href="#">Market Updates: Stock Prices Soar</a></h3>
+        <p>Aliquam erat volutpat. Nulla facilisi. <a href="#">Read more...</a></p>
       </div>
-
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
+    </section>
+    <aside class="ad-section">
+      <h2>Advertisement</h2>
+      <div class="ad-card">
+        <img src="images/ad-sample.jpg" alt="Ad">
+        <h3>Sample Ad</h3>
+        <p>Check out our offers!</p>
+      </div>
+    </aside>
   </div>
-  
-  <!-- End Page Container -->
-</div>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-</footer>
+  <!-- Modal for Travel Agency Advertisement -->
+  <div id="adModal">
+    <div id="adModalContent">
+      <span id="closeModal">&times;</span>
+      <img src="images/logo.png" alt="Special Travel Offer">
+      <h2>Exclusive Travel Deals Just for You!</h2>
+      <p>Don't miss out on our limited-time offers to exotic destinations. <a href="http://127.0.0.1:5500/TravelAgency/index.html">Book now</a> and make your dream vacation a reality.</p>
+    </div>
+  </div>
 
+  <!-- Message for age restricted users -->
+  <div id="ageRestricted">
+    <h2>Access Denied</h2>
+    <p>You must be at least 17 years old to view this website.</p>
+  </div>
+
+  <!-- JavaScript for age validation and modal -->
+  <script>
+    // Age validation on page load
+    window.onload = function() {
+      let age = prompt("Please enter your age:");
+      
+      // Check if the entered age is less than 17 or not a number
+      if (isNaN(age) || age < 17) {
+        // Hide main content
+        document.getElementById('mainContent').style.display = 'none';
+        // Hide header and marquee (optional)
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('marquee').style.display = 'none';
+        // Show age restricted message
+        document.getElementById('ageRestricted').style.display = 'block';
+      } else {
+        // Show main content if age is valid
+        document.getElementById('mainContent').style.display = 'flex';
+      }
+    };
+
+    // Function to show the advertisement modal after a delay
+    function showAdModal() {
+      var modal = document.getElementById('adModal');
+      var closeModal = document.getElementById('closeModal');
+
+      // Display the modal
+      modal.style.display = 'block';
+
+      // Close the modal when the user clicks on the close button
+      closeModal.onclick = function() {
+        modal.style.display = 'none';
+      };
+
+      // Close the modal when the user clicks outside the modal content
+      window.onclick = function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+    }
+
+    // Set a delay (e.g., 4 seconds) before showing the ad modal if the user passes the age check
+    setTimeout(function() {
+      // Only show the modal if main content is visible
+      if (document.getElementById('mainContent').style.display !== 'none') {
+        showAdModal();
+      }
+    }, 4000);
+  </script>
 </body>
 </html>
